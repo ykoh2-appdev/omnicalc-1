@@ -4,6 +4,8 @@ Dynamic web applications are more interesting than static websites for one reaso
 
 ### [Here is the target we will ultimately build.](https://omnicalc-1.matchthetarget.com/)
 
+#### [This chapter on forms may be helpful](https://chapters.firstdraft.com/chapters/881).
+
 ## Setup
 
 1. Start the web server by running `bin/server`.
