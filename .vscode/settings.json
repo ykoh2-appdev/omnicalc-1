@@ -31,12 +31,6 @@
   "html.format.preserveNewLines": true,
   "html.format.templating": true,
   "terminal.integrated.altClickMovesCursor": true,
-  "[erb]":  {
-		"editor.formatOnSave": true
-  },
-  "[ruby]":  {
-		"editor.formatOnSave": true
-  },
   "vscode-erb-beautify.keepBlankLines": 1,
   "ruby.intellisense": false,
   "gitpod.openInStable.neverPrompt": true,
