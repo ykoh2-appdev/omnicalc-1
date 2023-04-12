@@ -1,3 +1,4 @@
+
 class ApplicationController < ActionController::Base
   def blank_square_form
     render({ :template => "calculation_templates/square_form.html.erb" })
@@ -21,7 +22,21 @@ class ApplicationController < ActionController::Base
     render({ :template => "calculation_templates/square_root_results.html.erb"})
   end
 
+  def blank_payment_form
+    render({ :template => "calculation_templates/payment_form.html.erb" })
+  end
 
+  def calculate_payment_form
+
+    @apr = params.fetch("user_apr").to_f.round(4)
+    @years = params.fetch("user_years").to_f
+    @principal = params.fetch("user_principal").to_f
+    numerator = @apr/100/12*@principal
+    denominator =  1-((1+@apr/100/12)**(-@years*12))
+    @results = numerator/denominator.to_f
+
+    render({ :template => "calculation_templates/payment_results.html.erb" })
+  end
 
   def blank_random_form
     render({ :template => "calculation_templates/rand_form.html.erb" })
@@ -34,8 +49,6 @@ class ApplicationController < ActionController::Base
     @results = rand(@lower..@upper)
     
     render({ :template => "calculation_templates/rand_results.html.erb" })
-
   end
-
 
 end
